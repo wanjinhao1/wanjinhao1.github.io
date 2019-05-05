@@ -4,10 +4,10 @@ title:      Blog building exp
 subtitle:   
 date:       2019-05-05
 author:     Wangwei
-header-img: img/2019-5-5.jpg
+header-img: img/tag-bg-o.jpg
 catalog: true
 tags:
-    - Web
+    - Blog
 ---
 
 ## ABOUT
