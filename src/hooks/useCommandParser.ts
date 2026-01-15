@@ -11,19 +11,19 @@ export const useCommandParser = () => {
     const trimmedInput = input.trim();
     if (!trimmedInput) return [];
 
-    // 添加到历史
+    // Add to history
     setHistory((prev) => {
       const newHistory = [...prev, trimmedInput];
       setHistoryIndex(newHistory.length);
       return newHistory;
     });
 
-    // 解析命令
+    // Parse command
     const parts = trimmedInput.split(/\s+/);
     const commandName = parts[0].replace(/^\//, '');
     const args = parts.slice(1);
 
-    // 查找命令
+    // Find command
     const command = Object.values(commands).find(
       (cmd) => cmd.name === commandName
     );
@@ -32,29 +32,32 @@ export const useCommandParser = () => {
       const errorOutput: CommandOutput = {
         id: crypto.randomUUID(),
         type: 'error',
-        content: `未知命令: ${trimmedInput}\n输入 /help 查看可用命令`,
+        content: `Unknown command: ${trimmedInput}\nType /help to see available commands`,
         timestamp: new Date(),
+        command: trimmedInput,
       };
       setOutputs((prev) => [...prev, errorOutput]);
       return [errorOutput];
     }
 
-    // 执行命令
+    // Execute command
     const result = await command.handler(args);
     const newOutputs = Array.isArray(result) ? result : [result];
 
-    // 处理清屏命令
+    // Handle clear command
     if (newOutputs.some((o) => o.id === 'clear')) {
       setOutputs([]);
       return [];
     }
 
-    setOutputs((prev) => [...prev, ...newOutputs]);
-    return newOutputs;
-  }, []);
+    // Add command to each output
+    const outputsWithCommand = newOutputs.map((o) => ({
+      ...o,
+      command: trimmedInput,
+    }));
 
-  const clearOutputs = useCallback(() => {
-    setOutputs([]);
+    setOutputs((prev) => [...prev, ...outputsWithCommand]);
+    return outputsWithCommand;
   }, []);
 
   return {
@@ -63,6 +66,5 @@ export const useCommandParser = () => {
     historyIndex,
     setHistoryIndex,
     executeCommand,
-    clearOutputs,
   };
 };

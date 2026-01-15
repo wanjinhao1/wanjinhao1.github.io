@@ -57,7 +57,7 @@ export const CommandInput = ({
 
   return (
     <div className="command-input">
-      <span className="prompt">C:\\USERS\\GUEST&gt;</span>
+      <span className="prompt">C:\USERS\GUEST&gt;</span>
       <input
         ref={inputRef}
         type="text"

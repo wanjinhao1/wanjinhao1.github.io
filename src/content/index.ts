@@ -1,148 +1,152 @@
 export const WELCOME_CONTENT = `
-# 欢迎来到我的个人主页
+# Welcome to My Personal Homepage
 
 \`\`\`
-██╗    ██╗███████╗██████╗  ██████╗ ███████╗
-██║    ██║██╔════╝██╔══██╗██╔═══██╗██╔════╝
-██║ █╗ ██║█████╗  ██████╔╝██║   ██║███████╗
-██║███╗██║██╔══╝  ██╔══██╗██║   ██║╚════██║
-╚███╔███╔╝███████╗██████╔╝╚██████╔╝███████║
- ╚══╝╚══╝ ╚══════╝╚═════╝  ╚═════╝ ╚══════╝
+ _____                    _____
+|     |_ _ _ _ _ _       |_   _|___ ___ ___
+| | | | |_'|_'_| _|        | | | . |   | . |
+|_|_|_|_|_,_|_|_|___|      |_| |___|_|_|_  |
+                                        |___|
 \`\`\`
 
-我是一名开发者，这是我的 DOS 风格个人主页。
+I am a developer, and this is my DOS-style personal homepage.
 
-你可以：
-- 使用顶部菜单栏快速导航
-- 直接输入命令（如 \`/about\`）
-- 输入 \`/help\` 查看所有可用命令
+You can:
+- Use the top menu bar for quick navigation
+- Type commands directly (e.g., \`/about\`)
+- Type \`/help\` to see all available commands
 
 ---
 
-**提示**: 这是一个仿 DOS 终端风格的网页，所有内容都可以通过命令访问。
+**Note**: This is a DOS terminal-style website where all content can be accessed through commands.
 `;
 
 export const ABOUT_CONTENT = `
-# 关于我
+# About Me
 
-你好！我是王金豪，一名热爱技术的开发者。
+Hello! I'm Wang Jinhao, a developer passionate about technology.
 
-## 简介
-我专注于前端开发和用户体验设计，喜欢探索新技术，构建有趣的项目。
+## Introduction
+I focus on front-end development and user experience design. I love exploring new technologies and building interesting projects.
 
-这个 DOS 风格的个人主页是我对复古终端美学的致敬，同时也展示了我的技术能力。
+This DOS-style personal homepage is my tribute to retro terminal aesthetics, while also showcasing my technical skills.
 
-## 为什么选择 DOS 风格？
-- **简约**: 专注于内容本身
-- **高效**: 命令行交互快速直接
-- **怀旧**: 向计算机早期时代致敬
+## Why DOS Style?
+- **Minimal**: Focus on content itself
+- **Efficient**: Command-line interaction is fast and direct
+- **Nostalgic**: A tribute to the early era of computing
 
-希望你喜欢这个独特的浏览体验！
+Hope you enjoy this unique browsing experience!
 `;
 
 export const PROJECTS_CONTENT = `
-# 项目展示
+# Projects
 
-## 开源项目
+## Open Source Projects
 
 ### [DOS Terminal Homepage]
-> 这个网站本身
-> 技术栈: React, TypeScript, Vite
-> 一个复古风格的个人主页，支持命令行交互。
+> This website itself
+> Tech Stack: React, TypeScript, Vite
+> A retro-style personal homepage with command-line interaction.
 
-### [待添加项目]
-> 项目描述
-> 技术栈: XXX
-> 项目详细介绍...
+### [More Coming Soon]
+> Project description
+> Tech Stack: XXX
+> Detailed project introduction...
 
 ---
 
-*更多项目正在开发中，敬请期待*
+*More projects are under development, stay tuned*
 `;
 
 export const SKILLS_CONTENT = `
-# 技能栈
+# Skills
 
-## 前端开发
+## Front-end Development
 - JavaScript / TypeScript
 - React / Vue
 - HTML / CSS / SASS
 - Vite / Webpack
 
-## 后端开发
+## Back-end Development
 - Node.js
 - Express / Koa
 - RESTful API
 
-## 工具与其他
+## Tools & Others
 - Git / GitHub
 - Linux / Unix
 - VS Code
 
-## 学习中
+## Learning
 - Rust
 - WebAssembly
-- 边缘计算
+- Edge Computing
 
 ---
 
-*持续学习，持续进步*
+*Keep learning, keep improving*
 `;
 
 export const CONTACT_CONTENT = `
-# 联系方式
+# Contact
 
-很高兴认识你！以下是联系我的一些方式：
+Nice to meet you! Here are some ways to get in touch:
 
-## 社交媒体
+## Social Media
 - **GitHub**: [github.com/wanjinhao1](https://github.com/wanjinhao1)
 - **Email**: your-email@example.com
 
-## 留言
-如果你想和我交流，欢迎：
-1. 在 GitHub 上给我发 Issue
-2. 通过邮件联系我
+## Get in Touch
+If you'd like to connect:
+1. Send me an Issue on GitHub
+2. Contact me via email
 
 ---
 
-*感谢你的访问！*
+*Thanks for visiting!*
 `;
 
 export const HELP_CONTENT = `
-# 帮助信息
+# Help
 
-## 可用命令
+## Available Commands
 
-| 命令 | 描述 |
-|------|------|
-| \`/\` | 显示欢迎信息 |
-| \`/about\` | 关于我 |
-| \`/blog\` | 查看博客列表 |
-| \`/blog [id]\` | 查看指定博客 |
-| \`/projects\` | 项目展示 |
-| \`/skills\` | 技能栈 |
-| \`/contact\` | 联系方式 |
-| \`/help\` | 显示此帮助 |
-| \`/clear\` | 清空屏幕 |
+| Command | Description |
+|---------|-------------|
+| \`/\` | Show welcome message |
+| \`/about\` | About me |
+| \`/blog\` | View blog list |
+| \`/blog [id]\` | View specific blog |
+| \`/projects\` | Projects showcase |
+| \`/skills\` | Skills stack |
+| \`/contact\` | Contact information |
+| \`/help\` | Show this help |
+| \`/clear\` | Clear screen |
 
-## 使用方式
+## How to Use
 
-### 命令行
-直接在输入框中输入命令，按 Enter 执行：
+### Command Line
+Type commands directly in the input box and press Enter:
 
 \`\`\`
 /blog
 /about
+/projects
 \`\`\`
 
-### 菜单栏
-点击顶部菜单可以快速执行对应命令。
+### Menu Bar
+Click the top menu to quickly execute corresponding commands.
 
-### 快捷键
-- \`Ctrl + L\` - 清屏
-- \`↑ / ↓\` - 浏览历史命令
+### Keyboard Shortcuts
+- \`F1\` - Help
+- \`F2\` - Blog
+- \`F3\` - About
+- \`F4\` - Projects
+- \`Ctrl + L\` - Clear screen
+- \`↑ / ↓\` - Browse command history
 
 ---
 
-*祝你有愉快的体验！*
+*Have a pleasant experience!*
 `;

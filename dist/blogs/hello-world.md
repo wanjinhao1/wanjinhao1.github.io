@@ -1,37 +1,37 @@
 ---
-title: Hello World - 我的第一篇博客
+title: Hello World - My First Blog Post
 date: 2024-01-15
-summary: 欢迎来到我的博客！这是第一篇文章，介绍了这个网站的由来。
+summary: Welcome to my blog! This is the first article introducing the origin of this website.
 ---
 
 # Hello World
 
-欢迎来到我的博客！这是我的第一篇文章。
+Welcome to my blog! This is my first post.
 
-## 关于这个网站
+## About This Website
 
-这个网站采用了复古的 **DOS 终端风格**设计，灵感来自于早期的命令行界面。我使用现代的技术栈来构建这个怀旧风格的网站：
+This website features a retro **DOS terminal style** design, inspired by early command-line interfaces. I've built this nostalgic-style site using modern technologies:
 
-- **React 18** - 用户界面框架
-- **TypeScript** - 类型安全
-- **Vite** - 快速的构建工具
-- **GitHub Pages** - 静态网站托管
+- **React 18** - UI framework
+- **TypeScript** - Type safety
+- **Vite** - Fast build tool
+- **GitHub Pages** - Static site hosting
 
-## 为什么选择这种风格？
+## Why This Style?
 
-在当今充满华丽动画和复杂交互的 Web 世界中，我想创造一个**简洁而独特**的体验：
+In today's web world full of fancy animations and complex interactions, I wanted to create something **simple and unique**:
 
-- **专注内容** - 没有分散注意力的元素
-- **快速加载** - 极简的设计意味着更快的加载速度
-- **怀旧情怀** - 向计算机早期时代致敬
+- **Content-focused** - No distracting elements
+- **Fast loading** - Minimal design means faster load times
+- **Nostalgic** - A tribute to the early computing era
 
-## 如何使用这个网站
+## How to Use This Website
 
-你可以通过两种方式浏览：
+You can navigate in two ways:
 
-1. **命令行方式** - 直接输入命令，如 `/blog`、`/about`
-2. **菜单导航** - 点击顶部的菜单按钮
+1. **Command Line** - Type commands directly, like `/blog`, `/about`
+2. **Menu Navigation** - Click the top menu buttons
 
 ---
 
-感谢你的访问，希望你喜欢这个独特的体验！
+Thank you for visiting, and I hope you enjoy this unique experience!

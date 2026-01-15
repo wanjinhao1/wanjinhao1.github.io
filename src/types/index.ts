@@ -5,6 +5,7 @@ export interface CommandOutput {
   type: OutputType;
   content: string;
   timestamp: Date;
+  command?: string;
 }
 
 export interface Command {

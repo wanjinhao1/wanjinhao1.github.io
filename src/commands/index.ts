@@ -4,7 +4,7 @@ import { ABOUT_CONTENT, CONTACT_CONTENT, HELP_CONTENT, PROJECTS_CONTENT, SKILLS_
 export const commands: Record<string, Command> = {
   '/': {
     name: '/',
-    description: '显示欢迎信息',
+    description: 'Show welcome message',
     handler: () => ({
       id: crypto.randomUUID(),
       type: 'markdown',
@@ -14,7 +14,7 @@ export const commands: Record<string, Command> = {
   },
   about: {
     name: 'about',
-    description: '关于我',
+    description: 'About me',
     handler: () => ({
       id: crypto.randomUUID(),
       type: 'markdown',
@@ -24,7 +24,7 @@ export const commands: Record<string, Command> = {
   },
   blog: {
     name: 'blog',
-    description: '博客列表或查看博客',
+    description: 'View blog list or specific blog',
     handler: async (args) => {
       const blogId = args[0];
       if (blogId) {
@@ -34,7 +34,7 @@ export const commands: Record<string, Command> = {
             return {
               id: crypto.randomUUID(),
               type: 'error',
-              content: `找不到博客: ${blogId}`,
+              content: `Blog not found: ${blogId}`,
               timestamp: new Date(),
             };
           }
@@ -49,12 +49,12 @@ export const commands: Record<string, Command> = {
           return {
             id: crypto.randomUUID(),
             type: 'error',
-            content: `加载博客失败: ${error}`,
+            content: `Failed to load blog: ${error}`,
             timestamp: new Date(),
           };
         }
       }
-      // 返回博客列表
+      // Return blog list
       return {
         id: crypto.randomUUID(),
         type: 'blog-list',
@@ -65,7 +65,7 @@ export const commands: Record<string, Command> = {
   },
   projects: {
     name: 'projects',
-    description: '项目展示',
+    description: 'Projects showcase',
     handler: () => ({
       id: crypto.randomUUID(),
       type: 'markdown',
@@ -75,7 +75,7 @@ export const commands: Record<string, Command> = {
   },
   skills: {
     name: 'skills',
-    description: '技能栈',
+    description: 'Skills stack',
     handler: () => ({
       id: crypto.randomUUID(),
       type: 'markdown',
@@ -85,7 +85,7 @@ export const commands: Record<string, Command> = {
   },
   contact: {
     name: 'contact',
-    description: '联系方式',
+    description: 'Contact information',
     handler: () => ({
       id: crypto.randomUUID(),
       type: 'markdown',
@@ -95,7 +95,7 @@ export const commands: Record<string, Command> = {
   },
   help: {
     name: 'help',
-    description: '帮助信息',
+    description: 'Show help information',
     handler: () => ({
       id: crypto.randomUUID(),
       type: 'markdown',
@@ -105,7 +105,7 @@ export const commands: Record<string, Command> = {
   },
   clear: {
     name: 'clear',
-    description: '清屏',
+    description: 'Clear screen',
     handler: () => ({
       id: 'clear',
       type: 'text',

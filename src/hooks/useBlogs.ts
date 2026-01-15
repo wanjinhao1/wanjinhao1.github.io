@@ -1,27 +1,27 @@
 import { useState } from 'react';
 import { BlogMeta } from '../types';
 
-// 博客列表配置
+// Blog list configuration
 const BLOG_LIST: BlogMeta[] = [
   {
     id: 'hello-world',
-    title: 'Hello World - 我的第一篇博客',
+    title: 'Hello World - My First Blog Post',
     date: '2024-01-15',
-    summary: '欢迎来到我的博客！这是第一篇文章，介绍了这个网站的由来。',
+    summary: 'Welcome to my blog! This is the first article introducing the origin of this website.',
     filename: 'hello-world.md',
   },
   {
     id: 'react-vite-guide',
-    title: '使用 React + Vite 构建现代前端应用',
+    title: 'Building Modern Frontend Applications with React + Vite',
     date: '2024-01-20',
-    summary: '分享使用 Vite 和 React 构建高性能前端应用的经验。',
+    summary: 'Sharing experience using Vite and React to build high-performance applications.',
     filename: 'react-vite-guide.md',
   },
   {
     id: 'dos-terminal-design',
-    title: 'DOS 终端风格网页设计思路',
+    title: 'Designing a DOS Terminal Style Website',
     date: '2024-01-25',
-    summary: '如何设计和实现一个复古风格的终端界面。',
+    summary: 'How to design and implement a retro-style terminal interface.',
     filename: 'dos-terminal-design.md',
   },
 ];
@@ -31,12 +31,12 @@ export const useBlogs = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // 获取博客列表
+  // Get blog list
   const getBlogList = (): BlogMeta[] => {
     return blogs;
   };
 
-  // 获取单个博客
+  // Get single blog
   const getBlog = async (id: string): Promise<string | null> => {
     setLoading(true);
     setError(null);
@@ -44,19 +44,19 @@ export const useBlogs = () => {
     try {
       const blog = blogs.find((b) => b.id === id);
       if (!blog) {
-        setError('博客不存在');
+        setError('Blog not found');
         return null;
       }
 
       const response = await fetch(`/blogs/${blog.filename}`);
       if (!response.ok) {
-        throw new Error('加载失败');
+        throw new Error('Failed to load');
       }
 
       const content = await response.text();
       return content;
     } catch (err) {
-      setError(err instanceof Error ? err.message : '未知错误');
+      setError(err instanceof Error ? err.message : 'Unknown error');
       return null;
     } finally {
       setLoading(false);

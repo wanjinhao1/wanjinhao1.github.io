@@ -4,11 +4,12 @@ import remarkGfm from 'remark-gfm';
 
 interface OutputProps {
   output: CommandOutput;
+  onOpenBlog?: (id: string) => void;
 }
 
-export const Output = ({ output }: OutputProps) => {
+export const Output = ({ output, onOpenBlog }: OutputProps) => {
   if (output.type === 'blog-list') {
-    return <BlogListOutput />;
+    return <BlogListOutput onOpenBlog={onOpenBlog} />;
   }
 
   const getTypeClass = () => {
@@ -25,57 +26,77 @@ export const Output = ({ output }: OutputProps) => {
   };
 
   return (
-    <div className={`output ${getTypeClass()}`}>
-      {output.type === 'markdown' ? (
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>{output.content}</ReactMarkdown>
-      ) : (
-        <pre>{output.content}</pre>
+    <div className="output-wrapper">
+      {output.command && (
+        <div className="output-command-prompt">
+          <span className="prompt-symbol">C:\USERS\GUEST&gt;</span>
+          <span className="command-text">{output.command}</span>
+        </div>
       )}
+      <div className={`output ${getTypeClass()}`}>
+        {output.type === 'markdown' ? (
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{output.content}</ReactMarkdown>
+        ) : (
+          <pre>{output.content}</pre>
+        )}
+      </div>
     </div>
   );
 };
 
-const BlogListOutput = () => {
+const BlogListOutput = ({ onOpenBlog }: { onOpenBlog?: (id: string) => void }) => {
   const blogs = [
     {
       id: 'hello-world',
-      title: 'Hello World - 我的第一篇博客',
+      title: 'Hello World - My First Blog Post',
       date: '2024-01-15',
-      summary: '欢迎来到我的博客！这是第一篇文章，介绍了这个网站的由来。',
+      summary: 'Welcome to my blog! This is the first article introducing the origin of this website.',
     },
     {
       id: 'react-vite-guide',
-      title: '使用 React + Vite 构建现代前端应用',
+      title: 'Building Modern Frontend Applications with React + Vite',
       date: '2024-01-20',
-      summary: '分享使用 Vite 和 React 构建高性能前端应用的经验。',
+      summary: 'Sharing experience using Vite and React to build high-performance applications.',
     },
     {
       id: 'dos-terminal-design',
-      title: 'DOS 终端风格网页设计思路',
+      title: 'Designing a DOS Terminal Style Website',
       date: '2024-01-25',
-      summary: '如何设计和实现一个复古风格的终端界面。',
+      summary: 'How to design and implement a retro-style terminal interface.',
     },
   ];
 
   return (
-    <div className="output output-text">
-      <pre>
-        {`# 博客列表`}
+    <div className="output-wrapper">
+      <div className="output-command-prompt">
+        <span className="prompt-symbol">C:\USERS\GUEST&gt;</span>
+        <span className="command-text">/blog</span>
+      </div>
+      <div className="output output-text">
+        <pre>
+          {`# Blog List`}
 
 {'\n'}
 {blogs.map((blog, index) => (
   <span key={blog.id}>
 {`[${index + 1}] ${blog.title}`}
 {'\n'}
-{`    日期: ${blog.date}`}
+{`    Date: ${blog.date}`}
 {'\n'}
-{`    摘要: ${blog.summary}`}
+{`    Summary: ${blog.summary}`}
 {'\n'}
-{`    命令: /blog ${blog.id}`}
+{`    `}
+    <button
+      className="blog-link-btn"
+      onClick={() => onOpenBlog?.(blog.id)}
+    >
+      [Open: /blog {blog.id}]
+    </button>
 {'\n\n'}
   </span>
 ))}
-      </pre>
+        </pre>
+      </div>
     </div>
   );
 };
