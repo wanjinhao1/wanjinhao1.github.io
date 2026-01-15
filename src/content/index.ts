@@ -114,7 +114,7 @@ export const HELP_CONTENT = `
 
 | Command | Description |
 |---------|-------------|
-| \`/\` | Show welcome message |
+| \`/\` | Clear screen and show welcome |
 | \`/about\` | About me |
 | \`/blog\` | View blog list |
 | \`/blog [id]\` | View specific blog |
@@ -123,6 +123,7 @@ export const HELP_CONTENT = `
 | \`/contact\` | Contact information |
 | \`/help\` | Show this help |
 | \`/clear\` | Clear screen |
+| \`su <name>\` | Sign guestbook |
 
 ## How to Use
 
@@ -133,6 +134,7 @@ Type commands directly in the input box and press Enter:
 /blog
 /about
 /projects
+su Alice
 \`\`\`
 
 ### Menu Bar

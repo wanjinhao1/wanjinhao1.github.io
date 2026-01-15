@@ -7,6 +7,7 @@ import { MenuBar } from './MenuBar';
 import { CRTOverlay } from './CRTOverlay';
 import { NetscapeBrowserModal } from './NetscapeBrowserModal';
 import { GuestbookModal } from './GuestbookModal';
+import { DigitalSnow } from './DigitalSnow';
 
 export const Terminal = () => {
   const { outputs, history, historyIndex, setHistoryIndex, executeCommand } = useCommandParser();
@@ -64,6 +65,7 @@ export const Terminal = () => {
   return (
     <div className="terminal">
       <CRTOverlay />
+      <DigitalSnow />
       <MenuBar onCommand={handleExecuteCommand} />
 
       <div className="screen">

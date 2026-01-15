@@ -4,13 +4,21 @@ import { ABOUT_CONTENT, CONTACT_CONTENT, HELP_CONTENT, PROJECTS_CONTENT, SKILLS_
 export const commands: Record<string, Command> = {
   '/': {
     name: '/',
-    description: 'Show welcome message',
-    handler: () => ({
-      id: crypto.randomUUID(),
-      type: 'markdown',
-      content: WELCOME_CONTENT,
-      timestamp: new Date(),
-    }),
+    description: 'Clear screen and show welcome',
+    handler: () => [
+      {
+        id: 'clear',
+        type: 'text',
+        content: '__CLEAR__',
+        timestamp: new Date(),
+      },
+      {
+        id: crypto.randomUUID(),
+        type: 'markdown',
+        content: WELCOME_CONTENT,
+        timestamp: new Date(),
+      },
+    ],
   },
   about: {
     name: 'about',
