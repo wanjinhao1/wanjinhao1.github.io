@@ -5,6 +5,7 @@ interface CommandInputProps {
   history: string[];
   historyIndex: number;
   setHistoryIndex: (index: number) => void;
+  onTypingChange?: (isTyping: boolean) => void;
 }
 
 export const CommandInput = ({
@@ -12,10 +13,12 @@ export const CommandInput = ({
   history,
   historyIndex,
   setHistoryIndex,
+  onTypingChange,
 }: CommandInputProps) => {
   const [input, setInput] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
   const cursorRef = useRef<HTMLSpanElement>(null);
+  const typingTimeoutRef = useRef<NodeJS.Timeout>();
 
   // 保持输入框聚焦
   useEffect(() => {
@@ -36,6 +39,19 @@ export const CommandInput = ({
     }
   }, [historyIndex, history]);
 
+  // 通知输入状态变化
+  useEffect(() => {
+    if (input.length > 0) {
+      onTypingChange?.(true);
+      // 清除之前的定时器
+      if (typingTimeoutRef.current) {
+        clearTimeout(typingTimeoutRef.current);
+      }
+    } else if (input.length === 0) {
+      onTypingChange?.(false);
+    }
+  }, [input, onTypingChange]);
+
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       const command = input.trim();
@@ -43,6 +59,7 @@ export const CommandInput = ({
         onExecute(command);
         setInput('');
         setHistoryIndex(-1);
+        onTypingChange?.(false);
       }
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();

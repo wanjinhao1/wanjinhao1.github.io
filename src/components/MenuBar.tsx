@@ -11,7 +11,6 @@ export const MenuBar = ({ onCommand }: MenuBarProps) => {
     { label: 'Blog', command: '/blog' },
     { label: 'Projects', command: '/projects' },
     { label: 'Skills', command: '/skills' },
-    { label: 'Contact', command: '/contact' },
     { label: 'Help', command: '/help' },
   ];
 

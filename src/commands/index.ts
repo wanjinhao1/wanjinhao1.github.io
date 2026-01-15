@@ -1,5 +1,5 @@
 import { Command } from '../types';
-import { ABOUT_CONTENT, CONTACT_CONTENT, HELP_CONTENT, PROJECTS_CONTENT, SKILLS_CONTENT, WELCOME_CONTENT } from '../content';
+import { ABOUT_CONTENT, CONTACT_CONTENT, HELP_CONTENT, PROJECTS_CONTENT, SKILLS_CONTENT, WELCOME_CONTENT, BLOG_LIST_CONTENT } from '../content';
 
 export const commands: Record<string, Command> = {
   '/': {
@@ -49,8 +49,9 @@ export const commands: Record<string, Command> = {
           const content = await response.text();
           return {
             id: crypto.randomUUID(),
-            type: 'markdown',
-            content,
+            type: 'blog-detail',
+            content: blogId,
+            markdownContent: content,
             timestamp: new Date(),
           };
         } catch (error) {
@@ -65,8 +66,50 @@ export const commands: Record<string, Command> = {
       // Return blog list
       return {
         id: crypto.randomUUID(),
-        type: 'blog-list',
-        content: '',
+        type: 'markdown',
+        content: BLOG_LIST_CONTENT,
+        timestamp: new Date(),
+      };
+    },
+  },
+  project: {
+    name: 'project',
+    description: 'View project details',
+    handler: async (args) => {
+      const projectId = args[0];
+      if (projectId) {
+        try {
+          const response = await fetch(`/projects/${projectId}.md`);
+          if (!response.ok) {
+            return {
+              id: crypto.randomUUID(),
+              type: 'error',
+              content: `Project not found: ${projectId}`,
+              timestamp: new Date(),
+            };
+          }
+          const content = await response.text();
+          return {
+            id: crypto.randomUUID(),
+            type: 'project-detail',
+            content: projectId,
+            markdownContent: content,
+            timestamp: new Date(),
+          };
+        } catch (error) {
+          return {
+            id: crypto.randomUUID(),
+            type: 'error',
+            content: `Failed to load project: ${error}`,
+            timestamp: new Date(),
+          };
+        }
+      }
+      // Return projects list
+      return {
+        id: crypto.randomUUID(),
+        type: 'markdown',
+        content: PROJECTS_CONTENT,
         timestamp: new Date(),
       };
     },
@@ -88,16 +131,6 @@ export const commands: Record<string, Command> = {
       id: crypto.randomUUID(),
       type: 'markdown',
       content: SKILLS_CONTENT,
-      timestamp: new Date(),
-    }),
-  },
-  contact: {
-    name: 'contact',
-    description: 'Contact information',
-    handler: () => ({
-      id: crypto.randomUUID(),
-      type: 'markdown',
-      content: CONTACT_CONTENT,
       timestamp: new Date(),
     }),
   },

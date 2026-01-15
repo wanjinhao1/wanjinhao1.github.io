@@ -1,15 +1,13 @@
 export const WELCOME_CONTENT = `
 # Welcome to My Personal Homepage
+           
 
-\`\`\`
- _____                    _____
-|     |_ _ _ _ _ _       |_   _|___ ___ ___
-| | | | |_'|_'_| _|        | | | . |   | . |
-|_|_|_|_|_,_|_|_|___|      |_| |___|_|_|_  |
-                                        |___|
-\`\`\`
+This is Jinhao Wan, and welcom to my personal homepage. Now I am working in ZJUT as a PHD student. I am interested in "deep learning for signal Categorization/Identification" and "RF detection of UAVs".
 
-I am a developer, and this is my DOS-style personal homepage.
+You can find my typical papers, projects, skills, and contact information here.
+
+If you have any questions or suggestions, feel free to contact me (-> wanjinhao1@gmail.com <-) or leave a message. 
+
 
 You can:
 - Use the top menu bar for quick navigation
@@ -18,25 +16,53 @@ You can:
 
 ---
 
-**Note**: This is a DOS terminal-style website where all content can be accessed through commands.
+**Note**: This is a DOS terminal-style website where all content can be accessed through commands. 
+
+If you like the typical of this personal homepage, welcome to **fork** and **star**.
+[⭐ Star](https://github.com/wanjinhao1/wanjinhao1.github.io) | [⑂ Fork](https://github.com/wanjinhao1/wanjinhao1.github.io/fork)
 `;
 
 export const ABOUT_CONTENT = `
 # About Me
 
-Hello! I'm Wang Jinhao, a developer passionate about technology.
+Hello! I am Jinhao Wan. Now I am working in ZJUT as a PHD student. 
 
 ## Introduction
-I focus on front-end development and user experience design. I love exploring new technologies and building interesting projects.
 
-This DOS-style personal homepage is my tribute to retro terminal aesthetics, while also showcasing my technical skills.
+I am interested in "deep learning for signal Categorization/Identification" and "RF detection of UAVs".
 
-## Why DOS Style?
-- **Minimal**: Focus on content itself
-- **Efficient**: Command-line interaction is fast and direct
-- **Nostalgic**: A tribute to the early era of computing
 
-Hope you enjoy this unique browsing experience!
+## What I am look for?
+
+World peace !
+
+## Links
+
+- **GitHub**: [github.com/wanjinhao1](https://github.com/wanjinhao1)
+- **Google Scholar**: [scholar.google.com](https://scholar.google.com/citations?user=YOUR_ID)
+- **Email**: [wanjinhao1@gmail.com](mailto:wanjinhao1@gmail.com)
+`;
+
+export const BLOG_LIST_CONTENT = `
+# Blog List
+
+## Posts
+
+### [Hello World - My First Blog Post](/blog/hello-world)
+> Date: 2024-01-15
+> Welcome to my blog! This is the first article introducing the origin of this website.
+
+### [Building Modern Frontend Applications with React + Vite](/blog/react-vite-guide)
+> Date: 2024-01-20
+> Sharing experience using Vite and React to build high-performance applications.
+
+### [Designing a DOS Terminal Style Website](/blog/dos-terminal-design)
+> Date: 2024-01-25
+> How to design and implement a retro-style terminal interface.
+
+---
+
+*Type \`/blog [id]\` to read a specific post, or click the title above.*
 `;
 
 export const PROJECTS_CONTENT = `
@@ -44,44 +70,32 @@ export const PROJECTS_CONTENT = `
 
 ## Open Source Projects
 
-### [DOS Terminal Homepage]
+### [DOS Terminal Homepage](/project/dos-terminal)
 > This website itself
 > Tech Stack: React, TypeScript, Vite
 > A retro-style personal homepage with command-line interaction.
 
-### [More Coming Soon]
+### [RF Signal Classification with Deep Learning](/project/rf-classification)
+> Research project on UAV detection using deep learning
+> Tech Stack: Python, PyTorch, TensorFlow
+> Deep learning models for RF signal categorization and UAV detection.
+
+### [More Coming Soon](/project/coming-soon)
 > Project description
 > Tech Stack: XXX
 > Detailed project introduction...
 
 ---
 
-*More projects are under development, stay tuned*
+*Type \`/project [id]\` to view details, or click the title above.*
 `;
 
 export const SKILLS_CONTENT = `
 # Skills
 
-## Front-end Development
-- JavaScript / TypeScript
-- React / Vue
-- HTML / CSS / SASS
-- Vite / Webpack
+Technology is always evolving, and the core competitiveness lies in "The Ability to Solve Problems". 
 
-## Back-end Development
-- Node.js
-- Express / Koa
-- RESTful API
-
-## Tools & Others
-- Git / GitHub
-- Linux / Unix
-- VS Code
-
-## Learning
-- Rust
-- WebAssembly
-- Edge Computing
+-- But for now, **AI vibe coding** is the true god --
 
 ---
 
@@ -119,8 +133,8 @@ export const HELP_CONTENT = `
 | \`/blog\` | View blog list |
 | \`/blog [id]\` | View specific blog |
 | \`/projects\` | Projects showcase |
+| \`/project [id]\` | View specific project |
 | \`/skills\` | Skills stack |
-| \`/contact\` | Contact information |
 | \`/help\` | Show this help |
 | \`/clear\` | Clear screen |
 | \`su <name>\` | Sign guestbook |

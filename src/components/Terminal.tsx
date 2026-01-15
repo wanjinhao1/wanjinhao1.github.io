@@ -8,22 +8,29 @@ import { CRTOverlay } from './CRTOverlay';
 import { NetscapeBrowserModal } from './NetscapeBrowserModal';
 import { GuestbookModal } from './GuestbookModal';
 import { DigitalSnow } from './DigitalSnow';
+import { IE6BrowserModal } from './IE6BrowserModal';
 
 export const Terminal = () => {
   const { outputs, history, historyIndex, setHistoryIndex, executeCommand } = useCommandParser();
   const outputEndRef = useRef<HTMLDivElement>(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [currentBlogId, setCurrentBlogId] = useState<string | null>(null);
+  const [projectModalOpen, setProjectModalOpen] = useState(false);
+  const [currentProjectId, setCurrentProjectId] = useState<string | null>(null);
   const [guestbookOpen, setGuestbookOpen] = useState(false);
   const [guestbookUserName, setGuestbookUserName] = useState('');
+  const [snowActive, setSnowActive] = useState(true);
+  const [snowHighDensity, setSnowHighDensity] = useState(false);
 
   // Auto scroll to bottom
   useEffect(() => {
     outputEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [outputs]);
 
-  // Show welcome message on load
+  // Show welcome message on load with high density snow
   useEffect(() => {
+    setSnowHighDensity(true);
+    setSnowActive(true);
     executeCommand('/');
   }, []);
 
@@ -38,6 +45,11 @@ export const Terminal = () => {
     }
   }, [outputs]);
 
+  // Handle typing state
+  const handleTypingChange = useCallback((isTyping: boolean) => {
+    setSnowActive(!isTyping);
+  }, []);
+
   // Execute command with modal support
   const handleExecuteCommand = useCallback(async (command: string) => {
     const trimmedCommand = command.trim();
@@ -49,6 +61,20 @@ export const Terminal = () => {
     if (commandName === 'blog' && args[0]) {
       setCurrentBlogId(args[0]);
       setModalOpen(true);
+    }
+
+    // Check if it's a project detail command
+    if (commandName === 'project' && args[0]) {
+      setCurrentProjectId(args[0]);
+      setProjectModalOpen(true);
+    }
+
+    // Check if it's the / command - enable high density snow
+    if (commandName === '/' || trimmedCommand === '/') {
+      setSnowHighDensity(true);
+      setSnowActive(true);
+    } else {
+      setSnowHighDensity(false);
     }
 
     const result = await executeCommand(command);
@@ -65,7 +91,7 @@ export const Terminal = () => {
   return (
     <div className="terminal">
       <CRTOverlay />
-      <DigitalSnow />
+      <DigitalSnow active={snowActive} highDensity={snowHighDensity} />
       <MenuBar onCommand={handleExecuteCommand} />
 
       <div className="screen">
@@ -78,6 +104,10 @@ export const Terminal = () => {
                 setCurrentBlogId(id);
                 setModalOpen(true);
               }}
+              onOpenProject={(id) => {
+                setCurrentProjectId(id);
+                setProjectModalOpen(true);
+              }}
             />
           ))}
           <div ref={outputEndRef} />
@@ -88,6 +118,7 @@ export const Terminal = () => {
           history={history}
           historyIndex={historyIndex}
           setHistoryIndex={setHistoryIndex}
+          onTypingChange={handleTypingChange}
         />
       </div>
 
@@ -100,6 +131,12 @@ export const Terminal = () => {
         isOpen={modalOpen}
         blogId={currentBlogId}
         onClose={() => setModalOpen(false)}
+      />
+
+      <IE6BrowserModal
+        isOpen={projectModalOpen}
+        projectId={currentProjectId}
+        onClose={() => setProjectModalOpen(false)}
       />
 
       <GuestbookModal
