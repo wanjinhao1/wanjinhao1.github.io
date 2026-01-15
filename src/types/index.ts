@@ -1,4 +1,4 @@
-export type OutputType = 'text' | 'markdown' | 'success' | 'error' | 'info' | 'blog-list';
+export type OutputType = 'text' | 'markdown' | 'success' | 'error' | 'info' | 'blog-list' | 'easter-egg' | 'guestbook';
 
 export interface CommandOutput {
   id: string;

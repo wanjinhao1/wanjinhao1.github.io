@@ -113,4 +113,30 @@ export const commands: Record<string, Command> = {
       timestamp: new Date(),
     }),
   },
+  su: {
+    name: 'su',
+    description: 'Sign guestbook (usage: su <name>)',
+    handler: (args) => {
+      const name = args[0]?.toLowerCase();
+
+      // Easter egg: special names
+      if (name === 'yufan' || name === 'fanyu') {
+        return {
+          id: crypto.randomUUID(),
+          type: 'easter-egg',
+          content: 'Darling, will you marry me?',
+          timestamp: new Date(),
+        };
+      }
+
+      // Guestbook mode
+      const userName = args[0] || 'Anonymous';
+      return {
+        id: crypto.randomUUID(),
+        type: 'guestbook',
+        content: userName,
+        timestamp: new Date(),
+      };
+    },
+  },
 };

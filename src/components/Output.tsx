@@ -8,6 +8,23 @@ interface OutputProps {
 }
 
 export const Output = ({ output, onOpenBlog }: OutputProps) => {
+  // Don't render anything for guestbook type (handled by modal)
+  if (output.type === 'guestbook') {
+    return (
+      <div className="output-wrapper">
+        {output.command && (
+          <div className="output-command-prompt">
+            <span className="prompt-symbol">C:\USERS\GUEST&gt;</span>
+            <span className="command-text">{output.command}</span>
+          </div>
+        )}
+        <div className="output output-success">
+          <pre>Opening guestbook...</pre>
+        </div>
+      </div>
+    );
+  }
+
   if (output.type === 'blog-list') {
     return <BlogListOutput onOpenBlog={onOpenBlog} />;
   }
@@ -20,6 +37,8 @@ export const Output = ({ output, onOpenBlog }: OutputProps) => {
         return 'output-error';
       case 'info':
         return 'output-info';
+      case 'easter-egg':
+        return 'output-easter-egg';
       default:
         return 'output-text';
     }
