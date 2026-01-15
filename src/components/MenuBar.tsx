@@ -8,6 +8,7 @@ export const MenuBar = ({ onCommand }: MenuBarProps) => {
   const menuItems = [
     { label: 'Home', command: '/' },
     { label: 'About', command: '/about' },
+    { label: 'Publications', command: '/publications' },
     { label: 'Blog', command: '/blog' },
     { label: 'Projects', command: '/projects' },
     { label: 'Skills', command: '/skills' },

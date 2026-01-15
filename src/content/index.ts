@@ -25,7 +25,7 @@ If you like the typical of this personal homepage, welcome to **fork** and **sta
 export const ABOUT_CONTENT = `
 # About Me
 
-Hello! I am Jinhao Wan. Now I am working in ZJUT as a PHD student. 
+Hello! I am Jinhao Wan. Now I am working in ZJUT as a PHD student.
 
 ## Introduction
 
@@ -42,6 +42,53 @@ World peace !
 - **Google Scholar**: [scholar.google.com](https://scholar.google.com/citations?user=YOUR_ID)
 - **Email**: [wanjinhao1@gmail.com](mailto:wanjinhao1@gmail.com)
 `;
+
+export const PUBLICATIONS_CONTENT = `
+# Publications
+
+## Journal Papers
+
+### [Paper Title Here](https://doi.org/xxxx)
+**Authors**: Author One, Author Two, Jinhao Wan, Author Four
+**Publication**: Journal Name, Volume(Issue), Pages, Year
+**DOI**: [https://doi.org/xxxx](https://doi.org/xxxx)
+
+> **Main Work**: Brief description of the main contribution and work done in this paper.
+
+---
+
+### [Paper Title Here](https://doi.org/xxxx)
+**Authors**: Jinhao Wan, Author Two, Author Three
+**Publication**: Conference/Journal Name, Year
+**DOI**: [https://doi.org/xxxx](https://doi.org/xxxx)
+
+> **Main Work**: Brief description of the main contribution and work done in this paper.
+
+---
+
+## Conference Papers
+
+### [Paper Title Here](https://doi.org/xxxx)
+**Authors**: Author One, Jinhao Wan, Author Three
+**Publication**: Conference Name (Abbreviation), Year
+**DOI**: [https://doi.org/xxxx](https://doi.org/xxxx)
+
+> **Main Work**: Brief description of the main contribution and work done in this paper.
+
+---
+
+## Preprints / Under Review
+
+### [Paper Title Here](https://arxiv.org/xxxx)
+**Authors**: Jinhao Wan, Author Two
+**Status**: Under review at Journal/Conference
+**arXiv**: [https://arxiv.org/xxxx](https://arxiv.org/xxxx)
+
+> **Main Work**: Brief description of the main contribution and work done in this paper.
+
+---
+
+*For more publications, please visit my [Google Scholar](https://scholar.google.com/citations?user=YOUR_ID).*`;
 
 export const BLOG_LIST_CONTENT = `
 # Blog List
@@ -130,6 +177,7 @@ export const HELP_CONTENT = `
 |---------|-------------|
 | \`/\` | Clear screen and show welcome |
 | \`/about\` | About me |
+| \`/publications\` | My publications |
 | \`/blog\` | View blog list |
 | \`/blog [id]\` | View specific blog |
 | \`/projects\` | Projects showcase |
