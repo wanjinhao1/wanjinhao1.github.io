@@ -74,7 +74,6 @@ export const GuestbookModal = ({ isOpen, userName, onClose }: GuestbookModalProp
   const [isSigned, setIsSigned] = useState(false);
   const [replyingTo, setReplyingTo] = useState<string | null>(null);
   const [replyText, setReplyText] = useState('');
-  const [showClearConfirm, setShowClearConfirm] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -141,12 +140,6 @@ export const GuestbookModal = ({ isOpen, userName, onClose }: GuestbookModalProp
     saveMessages(updatedMessages);
     setReplyText('');
     setReplyingTo(null);
-  };
-
-  const handleClearAll = () => {
-    localStorage.removeItem('guestbook-messages');
-    setMessages(initialMessages);
-    setShowClearConfirm(false);
   };
 
   if (!isOpen) return null;
@@ -242,24 +235,7 @@ export const GuestbookModal = ({ isOpen, userName, onClose }: GuestbookModalProp
 
             {/* Messages List */}
             <div className="guestbook-messages">
-              <div className="guestbook-messages-header">
-                <h2 className="guestbook-messages-title">Recent Messages ({messages.length})</h2>
-                <button
-                  className="guestbook-clear-btn"
-                  onClick={() => setShowClearConfirm(true)}
-                >
-                  [Clear All]
-                </button>
-              </div>
-              {showClearConfirm && (
-                <div className="guestbook-confirm-dialog">
-                  <p>Are you sure you want to clear all messages?</p>
-                  <div className="guestbook-confirm-buttons">
-                    <button className="guestbook-confirm-yes" onClick={handleClearAll}>Yes</button>
-                    <button className="guestbook-confirm-no" onClick={() => setShowClearConfirm(false)}>No</button>
-                  </div>
-                </div>
-              )}
+              <h2 className="guestbook-messages-title">Recent Messages ({messages.length})</h2>
               {messages.length === 0 ? (
                 <p className="guestbook-empty">No messages yet. Be the first to sign!</p>
               ) : (
