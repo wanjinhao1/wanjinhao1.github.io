@@ -44,10 +44,18 @@ export const useCommandParser = () => {
     const result = await command.handler(args);
     const newOutputs = Array.isArray(result) ? result : [result];
 
-    // Handle clear command
-    if (newOutputs.some((o) => o.id === 'clear')) {
-      setOutputs([]);
-      return [];
+    // Filter out clear commands and handle screen clearing
+    const nonClearOutputs = newOutputs.filter((o) => o.id !== 'clear');
+    const hasClear = newOutputs.some((o) => o.id === 'clear');
+
+    if (hasClear) {
+      // Clear screen first, then show remaining outputs
+      const outputsWithCommand = nonClearOutputs.map((o) => ({
+        ...o,
+        command: trimmedInput,
+      }));
+      setOutputs(outputsWithCommand);
+      return outputsWithCommand;
     }
 
     // Add command to each output
