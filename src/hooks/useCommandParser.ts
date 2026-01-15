@@ -20,7 +20,8 @@ export const useCommandParser = () => {
 
     // Parse command
     const parts = trimmedInput.split(/\s+/);
-    const commandName = parts[0].replace(/^\//, '');
+    // Handle / command specially - don't strip the slash
+    const commandName = parts[0] === '/' ? '/' : parts[0].replace(/^\//, '');
     const args = parts.slice(1);
 
     // Find command
