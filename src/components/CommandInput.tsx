@@ -15,6 +15,7 @@ export const CommandInput = ({
 }: CommandInputProps) => {
   const [input, setInput] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
+  const cursorRef = useRef<HTMLSpanElement>(null);
 
   // 保持输入框聚焦
   useEffect(() => {
@@ -58,6 +59,7 @@ export const CommandInput = ({
   return (
     <div className="command-input">
       <span className="prompt">C:\USERS\GUEST&gt;</span>
+      {/* Hidden input for capturing keyboard input */}
       <input
         ref={inputRef}
         type="text"
@@ -68,8 +70,22 @@ export const CommandInput = ({
         autoComplete="off"
         spellCheck={false}
         autoFocus
+        style={{
+          position: 'absolute',
+          opacity: 0,
+          top: 0,
+          left: 0,
+          width: '1px',
+          height: '1px',
+          padding: 0,
+          border: 'none',
+        }}
       />
-      <span className="cursor">▋</span>
+      {/* Display text with cursor */}
+      <span className="input-display">
+        {input}
+        <span ref={cursorRef} className="cursor">▋</span>
+      </span>
     </div>
   );
 };
