@@ -1,5 +1,5 @@
 import { Command } from '../types';
-import { ABOUT_CONTENT, CONTACT_CONTENT, HELP_CONTENT, PROJECTS_CONTENT, SKILLS_CONTENT, WELCOME_CONTENT, BLOG_LIST_CONTENT } from '../content';
+import { ABOUT_CONTENT, HELP_CONTENT, PROJECTS_CONTENT, SKILLS_CONTENT, WELCOME_CONTENT, BLOG_LIST_CONTENT } from '../content';
 
 export const commands: Record<string, Command> = {
   '/': {

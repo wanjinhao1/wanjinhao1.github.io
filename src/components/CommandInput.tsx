@@ -18,7 +18,7 @@ export const CommandInput = ({
   const [input, setInput] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
   const cursorRef = useRef<HTMLSpanElement>(null);
-  const typingTimeoutRef = useRef<NodeJS.Timeout>();
+  const typingTimeoutRef = useRef<number>();
 
   // 保持输入框聚焦
   useEffect(() => {
