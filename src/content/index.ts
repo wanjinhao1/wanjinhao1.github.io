@@ -95,6 +95,10 @@ export const BLOG_LIST_CONTENT = `
 
 ## Posts
 
+### [Oh!my Ai-vibe-coding](/blog/ai-vibe-coding)
+> Date: 2026-01-19
+> Ai is the god's whispers.
+
 ### [Hello World - My First Blog Post](/blog/hello-world)
 > Date: 2024-01-15
 > Welcome to my blog! This is the first article introducing the origin of this website.
