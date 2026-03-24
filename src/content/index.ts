@@ -95,17 +95,9 @@ export const BLOG_LIST_CONTENT = `
 
 ## Posts
 
-### [Oh!my Ai-vibe-coding](/blog/ai-vibe-coding)
+### [Oh!my Ai-vibe-coding](/blog/oh-my-Ai-vibe-coding)
 > Date: 2026-01-19
-> Ai is the god's whispers.
-
-### [Hello World - My First Blog Post](/blog/hello-world)
-> Date: 2024-01-15
-> Welcome to my blog! This is the first article introducing the origin of this website.
-
-### [Building Modern Frontend Applications with React + Vite](/blog/react-vite-guide)
-> Date: 2024-01-20
-> Sharing experience using Vite and React to build high-performance applications.
+> AI is the god's whispers.
 
 ### [Designing a DOS Terminal Style Website](/blog/dos-terminal-design)
 > Date: 2024-01-25
@@ -130,11 +122,6 @@ export const PROJECTS_CONTENT = `
 > Research project on UAV detection using deep learning
 > Tech Stack: Python, PyTorch, TensorFlow
 > Deep learning models for RF signal categorization and UAV detection.
-
-### [More Coming Soon](/project/coming-soon)
-> Project description
-> Tech Stack: XXX
-> Detailed project introduction...
 
 ---
 
