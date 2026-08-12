@@ -1,0 +1,118 @@
+{
+  "person": {
+    "name": "Jinhao Wan",
+    "email": "wanjinhao1@gmail.com",
+    "role": "PhD Researcher",
+    "location": "Hangzhou, China",
+    "affiliations": ["Zhejiang University of Technology"]
+  },
+  "domains": [
+    {
+      "id": "signal-id",
+      "number": "01",
+      "title": "RF Signal Identification",
+      "kicker": "Categorize the spectrum",
+      "description": "Automatically identifying and categorizing received RF signals — modulation type, waveform family and signal class — directly from raw I/Q samples.",
+      "image": "/assets/images/directions/signal-id.svg",
+      "position": { "x": 22, "y": 24 },
+      "publicationIds": ["amc-dl"]
+    },
+    {
+      "id": "uav-detection",
+      "number": "02",
+      "title": "UAV Detection",
+      "kicker": "Find the emitter",
+      "description": "Detecting, localizing and recognizing unmanned aerial vehicles from their RF emissions, including per-device RF fingerprinting.",
+      "image": "/assets/images/directions/uav-detection.svg",
+      "position": { "x": 78, "y": 24 },
+      "publicationIds": ["uav-rf"]
+    },
+    {
+      "id": "dl-rf",
+      "number": "03",
+      "title": "Deep Learning for RF",
+      "kicker": "Learn from waveforms",
+      "description": "Designing CNN, ResNet and Transformer architectures that turn raw I/Q and time–frequency representations into reliable signal decisions.",
+      "image": "/assets/images/directions/dl-rf.svg",
+      "position": { "x": 50, "y": 52 },
+      "publicationIds": ["amc-dl", "uav-rf"]
+    },
+    {
+      "id": "robust-recognition",
+      "number": "04",
+      "title": "Robust Recognition",
+      "kicker": "Hold up under noise",
+      "description": "Keeping classifiers accurate under low SNR, channel fading, hardware impairment and the distribution shift between lab and field captures.",
+      "image": "/assets/images/directions/robust-recognition.svg",
+      "position": { "x": 50, "y": 82 },
+      "publicationIds": ["amc-dl", "uav-rf"]
+    }
+  ],
+  "publications": [
+    {
+      "id": "amc-dl",
+      "year": 2025,
+      "venue": "Manuscript in preparation",
+      "venueShort": "IN PREP.",
+      "type": "Preprint",
+      "status": "In preparation",
+      "title": "Deep Learning for Automatic Modulation Classification of RF Signals",
+      "authors": [{ "name": "Jinhao Wan", "self": true }],
+      "note": "Ongoing work",
+      "featuredRank": 1,
+      "image": "/assets/images/publications/amc.svg",
+      "imageAlt": "IQ constellation diagram with modulation clusters and a learned decision boundary",
+      "summary": "Ongoing work on convolutional and transformer models that classify the modulation type of received RF signals from raw I/Q samples, with an emphasis on robustness at low SNR.",
+      "keywords": ["Automatic modulation classification", "Deep learning", "Signal identification"],
+      "links": { "Project": "/projects/rf-detection/" },
+      "bibtex": "@misc{wan2025amc,\n  title={Deep Learning for Automatic Modulation Classification of RF Signals},\n  author={Wan, Jinhao},\n  year={2025},\n  howpublished={Manuscript in preparation},\n  note={Work in progress}\n}"
+    },
+    {
+      "id": "uav-rf",
+      "year": 2025,
+      "venue": "Manuscript in preparation",
+      "venueShort": "IN PREP.",
+      "type": "Preprint",
+      "status": "In preparation",
+      "title": "RF-Based Detection and Recognition of Unmanned Aerial Vehicles",
+      "authors": [{ "name": "Jinhao Wan", "self": true }],
+      "note": "Ongoing work",
+      "featuredRank": 2,
+      "image": "/assets/images/publications/uav-rf.svg",
+      "imageAlt": "RF spectrogram showing a narrowband UAV control-link signature",
+      "summary": "Ongoing work on detecting and identifying small UAVs from their RF emissions using software-defined radio captures and deep classifiers, including RF fingerprinting of individual devices.",
+      "keywords": ["UAV detection", "RF fingerprinting", "Software-defined radio"],
+      "links": { "Project": "/projects/rf-detection/" },
+      "bibtex": "@misc{wan2025uav,\n  title={RF-Based Detection and Recognition of Unmanned Aerial Vehicles},\n  author={Wan, Jinhao},\n  year={2025},\n  howpublished={Manuscript in preparation},\n  note={Work in progress}\n}"
+    }
+  ],
+  "projects": [
+    {
+      "id": "rf-detection",
+      "title": "RF Signal Classification & UAV Detection",
+      "type": "Method",
+      "eyebrow": "Deep learning for RF signals",
+      "year": 2026,
+      "description": "Deep-learning pipelines for automatic modulation classification and RF-based detection and fingerprinting of UAVs, built on software-defined radio captures.",
+      "image": "/assets/images/publications/uav-rf.svg",
+      "tags": ["Signal identification", "UAV detection", "AMC", "PyTorch"],
+      "href": "/projects/rf-detection/"
+    },
+    {
+      "id": "sdr-dataset",
+      "title": "SDR RF Signal Capture Set",
+      "type": "Dataset",
+      "eyebrow": "Software-defined radio recordings",
+      "year": 2026,
+      "description": "An in-progress collection of software-defined radio captures spanning multiple modulation types and UAV emitters, used to train and evaluate signal classifiers.",
+      "image": "/assets/images/directions/signal-id.svg",
+      "tags": ["SDR", "Dataset", "Time–frequency"],
+      "href": "/research/#signal-id"
+    }
+  ],
+  "news": [
+    { "date": "2026-08", "label": "Aug 2026", "title": "Portfolio relaunch", "text": "personal site rebuilt as an interactive RF research portfolio." },
+    { "date": "2026", "label": "2026", "title": "Research focus", "text": "deep learning for RF signal categorization and the RF detection of UAVs." },
+    { "date": "2026", "label": "2026", "title": "Ongoing work", "text": "automatic modulation classification and RF fingerprinting manuscripts in preparation." }
+  ]
+}

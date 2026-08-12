@@ -21,22 +21,29 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
+      # Zero-build: the repo root IS the site. Stage only the served files
+      # into _site, dropping non-site directories before uploading.
+      - name: Stage site
+        run: |
+          mkdir -p _site
+          rsync -a \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='.claude' \
+            --exclude='node_modules' \
+            --exclude='scripts' \
+            --exclude='_site' \
+            --exclude='.gitignore' \
+            --exclude='package.json' \
+            --exclude='package-lock.json' \
+            --exclude='CLAUDE.md' \
+            ./ _site/
+          touch _site/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./_site
 
   deploy:
     environment:

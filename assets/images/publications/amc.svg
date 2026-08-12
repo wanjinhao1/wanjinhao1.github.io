@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <defs><radialGradient id="g"><stop stop-color="#174a52"/><stop offset="1" stop-color="#071018"/></radialGradient></defs>
+  <rect width="1200" height="700" fill="url(#g)"/>
+  <g stroke="#79f3ee" opacity=".3"><line x1="600" y1="120" x2="600" y2="600"/><line x1="240" y1="360" x2="960" y2="360"/></g>
+  <path d="M240 360 L600 120 M600 120 L960 360 M960 360 L600 600 M600 600 L240 360 M240 360 L960 360 M600 120 L600 600" fill="none" stroke="#79f3ee" stroke-opacity=".22" stroke-dasharray="6 8"/>
+  <g fill="#79f3ee"><circle cx="430" cy="230" r="6"/><circle cx="770" cy="230" r="6"/><circle cx="430" cy="490" r="6"/><circle cx="770" cy="490" r="6"/></g>
+  <g fill="#79f3ee" opacity=".5"><circle cx="414" cy="244" r="2.4"/><circle cx="448" cy="216" r="2.4"/><circle cx="752" cy="248" r="2.4"/><circle cx="788" cy="214" r="2.4"/><circle cx="414" cy="476" r="2.4"/><circle cx="448" cy="504" r="2.4"/><circle cx="752" cy="504" r="2.4"/><circle cx="788" cy="472" r="2.4"/></g>
+  <g fill="#ff9d66"><circle cx="600" cy="250" r="4"/><circle cx="670" cy="300" r="4"/><circle cx="670" cy="420" r="4"/><circle cx="600" cy="470" r="4"/><circle cx="530" cy="420" r="4"/><circle cx="530" cy="300" r="4"/></g>
+  <g fill="#9a8cff"><circle cx="840" cy="340" r="3"/><circle cx="840" cy="380" r="3"/><circle cx="820" cy="360" r="3"/><circle cx="860" cy="360" r="3"/></g>
+  <text x="448" y="218" fill="#79f3ee" font-family="monospace" font-size="15" opacity=".85">QPSK</text>
+  <text x="595" y="240" fill="#ff9d66" font-family="monospace" font-size="15" opacity=".85">8PSK</text>
+</svg>

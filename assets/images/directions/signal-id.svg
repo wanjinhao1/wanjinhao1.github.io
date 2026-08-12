@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <defs><radialGradient id="g"><stop stop-color="#174a52"/><stop offset="1" stop-color="#071018"/></radialGradient></defs>
+  <rect width="1200" height="700" fill="url(#g)"/>
+  <g stroke="#79f3ee" opacity=".25"><line x1="600" y1="120" x2="600" y2="600"/><line x1="220" y1="360" x2="980" y2="360"/></g>
+  <g fill="#79f3ee"><circle cx="430" cy="230" r="6"/><circle cx="770" cy="230" r="6"/><circle cx="430" cy="490" r="6"/><circle cx="770" cy="490" r="6"/></g>
+  <g fill="#79f3ee" opacity=".55"><circle cx="412" cy="246" r="2.6"/><circle cx="448" cy="216" r="2.6"/><circle cx="754" cy="248" r="2.6"/><circle cx="788" cy="214" r="2.6"/><circle cx="414" cy="474" r="2.6"/><circle cx="446" cy="506" r="2.6"/><circle cx="752" cy="506" r="2.6"/><circle cx="786" cy="472" r="2.6"/></g>
+  <g fill="#ff9d66"><circle cx="600" cy="220" r="4"/><circle cx="690" cy="290" r="4"/><circle cx="690" cy="430" r="4"/><circle cx="600" cy="500" r="4"/><circle cx="510" cy="430" r="4"/><circle cx="510" cy="290" r="4"/><circle cx="660" cy="250" r="4"/><circle cx="540" cy="470" r="4"/></g>
+  <g fill="#9a8cff"><circle cx="820" cy="360" r="3"/><circle cx="840" cy="340" r="3"/><circle cx="800" cy="340" r="3"/><circle cx="840" cy="380" r="3"/><circle cx="800" cy="380" r="3"/><circle cx="860" cy="360" r="3"/></g>
+  <circle cx="600" cy="360" r="250" fill="none" stroke="#79f3ee" stroke-opacity=".14"/>
+</svg>

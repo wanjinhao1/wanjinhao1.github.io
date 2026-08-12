@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#06080c">
+  <meta name="description" content="Deep-learning pipelines for RF signal classification and the RF-based detection and fingerprinting of unmanned aerial vehicles — an ongoing project by Jinhao Wan.">
+  <title>RF Signal Classification &amp; UAV Detection — Jinhao Wan</title><link rel="canonical" href="https://wanjinhao1.github.io/projects/rf-detection/"><link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/cosmic.css?v=1"><link rel="stylesheet" href="/assets/css/subpages.css?v=1">
+  <style>
+    /* Render the dark RF visualizations as monitor-style panels on the light page. */
+    .detail-figure { background: #07090d; border-color: rgba(0,0,0,.10); }
+    .detail-figure img { mix-blend-mode: normal; }
+    .detail-figure figcaption { color: #a9b9bb; border-color: rgba(255,255,255,.08); }
+    .detail-cta { padding: 90px 0 0; }
+    .detail-cta .shell { display: flex; flex-wrap: wrap; gap: 18px 28px; align-items: baseline; justify-content: space-between; border-top: 1px solid var(--paper-line); padding-top: 50px; }
+    .detail-cta h2 { margin: 0; max-width: 18ch; font-family: var(--display); font-size: clamp(34px,5vw,60px); line-height: 1; letter-spacing: -.03em; color: #15202a; }
+    .detail-cta .detail-cta-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a><div class="page-progress" aria-hidden="true"><i data-page-progress></i></div><div class="noise" aria-hidden="true"></div>
+  <header class="site-header" data-header><nav class="nav-pill" aria-label="Primary navigation"><a class="monogram" href="/" aria-label="Jinhao Wan — home"><span>JW</span></a><span class="nav-divider"></span><div class="nav-links" data-nav-links><a href="/">Home</a><a href="/research/">Research Atlas</a><a href="/publications/">Publications</a><a class="active" href="/projects/">Projects</a><a href="/explorer/">Explorer</a></div><span class="nav-divider nav-divider-end"></span><button class="command-trigger" data-command-trigger type="button" aria-label="Open site search"><span>Search</span><kbd>⌘K</kbd></button><a class="nav-contact" href="mailto:wanjinhao1@gmail.com">Say hello ↗</a><button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle><span></span><span></span></button></nav></header>
+  <main id="main">
+    <section class="detail-hero" aria-labelledby="detail-title">
+      <div class="detail-hero-media"><img src="/assets/images/publications/uav-rf.svg" alt="RF spectrogram showing a narrowband UAV control-link signature"></div>
+      <div class="shell">
+        <div class="detail-meta"><span>Method</span><span>RF &amp; Deep Learning</span><span>In progress · 2026</span></div>
+        <h1 id="detail-title" class="detail-title">RF<em>Sense</em></h1>
+        <p class="detail-subtitle">Deep-learning pipelines for automatic modulation classification and the RF-based detection and fingerprinting of unmanned aerial vehicles.</p>
+        <div class="detail-actions">
+          <a class="button button-primary" href="#overview">Overview <span aria-hidden="true">↓</span></a>
+          <a class="button button-ghost" href="/publications/">Related manuscript <span aria-hidden="true">↗</span></a>
+          <a class="button button-ghost" href="/explorer/">Live explorer <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-body">
+      <div class="shell">
+        <div class="detail-lead" id="overview">
+          <p>Overview</p>
+          <div class="detail-lead-copy">
+            <p>Turning raw I/Q samples into reliable signal decisions.</p>
+            <p>This ongoing project builds deep-learning pipelines that take raw in-phase / quadrature (I/Q) samples from a software-defined radio and classify them — first by modulation type (automatic modulation classification), then by emitter identity, including the detection and fingerprinting of small unmanned aerial vehicles.</p>
+            <p>The work spans the full stack: SDR data capture, time–frequency feature design, and model architectures evaluated under the noise, fading and hardware impairment of real RF channels. It is early-stage research — the pipelines, captures and observations below evolve as the work matures, and nothing here should be read as a final benchmark.</p>
+          </div>
+        </div>
+
+        <figure class="detail-figure">
+          <img src="/assets/images/publications/amc.svg" alt="IQ constellation diagram with modulation clusters and a learned decision boundary">
+          <figcaption>Automatic modulation classification — learned decision boundaries over I/Q symbol clusters</figcaption>
+        </figure>
+
+        <div class="detail-lead">
+          <p>Approach</p>
+          <div class="detail-lead-copy">
+            <p>From waveforms to decisions, with models that respect the physics of the channel.</p>
+            <p>Inputs are raw I/Q samples and their time–frequency representations (spectrograms and constellation views). Models range from compact CNN baselines to ResNet and Transformer architectures, compared on their ability to classify common digital modulations (PSK, QAM, OFDM) and to separate UAV control-link emissions from background traffic and noise.</p>
+            <p>A particular focus is robustness: how accurately a classifier holds up at low signal-to-noise ratio, under channel fading, and across the distribution shift between controlled captures and field recordings — the gap that most often breaks lab-trained RF models.</p>
+          </div>
+        </div>
+
+        <figure class="detail-figure">
+          <img src="/assets/images/publications/uav-rf.svg" alt="RF spectrogram showing a narrowband UAV control-link signature">
+          <figcaption>UAV control-link signature embedded in a recorded RF spectrogram</figcaption>
+        </figure>
+
+        <div class="detail-lead">
+          <p>Status &amp; roadmap</p>
+          <div class="detail-lead-copy">
+            <p>Currently in the data-collection and baseline-modeling phase.</p>
+            <p>Planned next steps: expand the software-defined radio capture set across more modulation types and UAV models; benchmark robustness at low SNR and under fading; and prepare the manuscripts listed in the publications library. Code and captures will be released here as the work stabilizes.</p>
+            <p>If you work on RF signal identification, UAV detection or related deep-learning methods and would like to collaborate, the contact links below are open.</p>
+          </div>
+        </div>
+
+        <div class="detail-cta">
+          <div class="shell">
+            <h2>Have a signal to classify?</h2>
+            <div class="detail-cta-actions">
+              <a class="button button-primary" href="mailto:wanjinhao1@gmail.com">Get in touch <span aria-hidden="true">↗</span></a>
+              <a class="button button-ghost" href="/projects/">All projects <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+<footer class="site-footer shell"><a class="template-origin" href="https://github.com/zhuqinfeng1999/interactive-academic-portfolio" target="_blank" rel="noreferrer" aria-label="View the Spatialfolio template on GitHub"><span class="template-origin-icon" aria-hidden="true"></span><span class="template-origin-copy"><span class="template-origin-kicker">Template provenance</span><strong>Built with Spatialfolio</strong><span class="template-origin-detail">Academic portfolio template by Qinfeng Zhu</span></span><span class="template-origin-arrow" aria-hidden="true">↗</span></a><div class="footer-links"><a href="mailto:wanjinhao1@gmail.com">Email ↗</a><a href="https://github.com/wanjinhao1">GitHub ↗</a></div><div class="footer-meta"><span>© <span data-year>2026</span> Jinhao Wan</span><a href="#main">Back to top ↑</a></div></footer>
+  <script src="/assets/js/cosmic.js?v=1" defer></script>
+</body>
+</html>

@@ -1,17 +1,160 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/terminal.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wang Jinhao - DOS Terminal</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/perfect-dos-vga-437@1.0.0/index.css" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06080c">
+  <meta name="description" content="Jinhao Wan — PhD researcher in deep learning for RF signal identification and the RF detection of UAVs. An interactive research portfolio.">
+  <meta name="keywords" content="RF signal identification, automatic modulation classification, UAV detection, RF fingerprinting, deep learning, software-defined radio, research portfolio">
+  <meta name="author" content="Jinhao Wan">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wanjinhao1.github.io/">
+  <meta property="og:title" content="Jinhao Wan — RF Research Portfolio">
+  <meta property="og:description" content="Deep learning for RF signal categorization and the RF detection of UAVs.">
+  <meta property="og:image" content="https://wanjinhao1.github.io/assets/images/social-preview.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Jinhao Wan — RF Research Portfolio</title>
+  <link rel="canonical" href="https://wanjinhao1.github.io/">
+  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/cosmic.css?v=1">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jinhao Wan",
+    "url": "https://wanjinhao1.github.io/",
+    "jobTitle": "PhD Researcher",
+    "affiliation": {"@type": "CollegeOrUniversity", "name": "Zhejiang University of Technology"},
+    "email": "mailto:wanjinhao1@gmail.com",
+    "sameAs": ["https://github.com/wanjinhao1"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="loader" data-loader aria-hidden="true">
+    <div class="loader-top"><span>Jinhao Wan</span><span>Research Atlas</span></div>
+    <div class="loader-center"><p data-loader-word>Detect</p><span>RF · SIGNALS · DISCOVERY</span></div>
+    <div class="loader-count" data-loader-count>000</div>
+    <div class="loader-progress"><i data-loader-progress></i></div>
+  </div>
+  <div class="page-progress" aria-hidden="true"><i data-page-progress></i></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <nav class="nav-pill" aria-label="Primary navigation">
+      <a class="monogram" href="#home" aria-label="Jinhao Wan — home"><span>JW</span></a>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <div class="nav-links" data-nav-links>
+        <a class="active" href="#home">Home</a>
+        <a href="/research/">Research Atlas</a>
+        <a href="/publications/">Publications</a>
+        <a href="/projects/">Projects</a>
+        <a href="/explorer/">Explorer</a>
+        <a href="#service">Service</a>
+      </div>
+      <span class="nav-divider nav-divider-end" aria-hidden="true"></span>
+      <button class="command-trigger" data-command-trigger type="button" aria-label="Open site search"><span>Search</span><kbd>⌘K</kbd></button>
+      <a class="nav-contact" href="mailto:wanjinhao1@gmail.com">Say hello ↗</a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle><span></span><span></span></button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-world" role="img" aria-label="An interactive RF signal-intelligence scene with four research modes">
+        <canvas data-spatial-world data-scene="hero" data-mode="features" aria-hidden="true"></canvas>
+      </div>
+      <div class="world-hud world-hud-top"><span><b data-world-status>RF signal clusters</b><small data-world-interaction>Move probe · click to scan</small></span><em>Interactive</em></div>
+      <div class="world-mode-switcher" role="group" aria-label="Homepage visualization mode">
+        <button class="active" data-world-mode="features" type="button" aria-pressed="true"><i>01</i><span>Feature space</span></button>
+        <button data-world-mode="constellation" type="button" aria-pressed="false"><i>02</i><span>IQ constellation</span></button>
+        <button data-world-mode="spectrum" type="button" aria-pressed="false"><i>03</i><span>Spectrum</span></button>
+        <button data-world-mode="detection" type="button" aria-pressed="false"><i>04</i><span>UAV detection</span></button>
+      </div>
+      <div class="world-hud world-hud-bottom">
+        <strong data-world-title>Signal feature space</strong>
+        <span data-world-detail>Move to reveal classes · click to probe the spectrum</span>
+        <span class="semantic-legend" aria-label="Signal class colours"><i class="building"></i>PSK <i class="vegetation"></i>OFDM <i class="road"></i>Noise <i class="vehicle"></i>UAV</span>
+      </div>
+      <div class="hero-content shell">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Research portfolio · Hangzhou · 2026</p>
+          <h1 id="hero-title" class="hero-name reveal">Jinhao <em>Wan</em><small>PhD Researcher · RF &amp; Deep Learning</small></h1>
+          <p class="hero-role reveal">I build deep-learning systems that classify and identify <span class="role-rotator" data-roles="RF signals|UAV emitters|modulation classes|spectral patterns">RF signals</span>.</p>
+          <p class="hero-intro reveal">I am a PhD researcher at <strong>Zhejiang University of Technology</strong> working on deep learning for radio-frequency signals — automatic modulation classification, RF fingerprinting of unmanned aerial vehicles, and robust recognition under real-world noise and channel conditions.</p>
+          <div class="hero-actions reveal">
+            <a class="button button-primary" href="/research/">Explore the atlas <span aria-hidden="true">↗</span></a>
+            <a class="button button-ghost" href="/publications/">Publications <span aria-hidden="true">↗</span></a>
+            <a class="button button-ghost" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-socials reveal" aria-label="Research profiles">
+            <a href="https://github.com/wanjinhao1" target="_blank" rel="noreferrer"><b>GH</b>GitHub</a>
+            <a href="mailto:wanjinhao1@gmail.com"><b>@</b>Email</a>
+          </div>
+        </div>
+        <div class="availability reveal" aria-label="Availability">
+          <div class="opportunity"><b>NOW</b><p><strong>Research collaborations</strong><br>Open to ideas on RF signal identification and UAV detection.</p></div>
+          <div class="opportunity"><b>NEXT</b><p><strong>Doctoral research</strong><br>Pursuing a PhD at Zhejiang University of Technology.</p></div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#research"><span>Scroll to research</span><i></i></a>
+    </section>
+
+    <div class="home-ticker" aria-label="Research topics"><div class="home-ticker-track">
+      <span>Automatic Modulation Classification</span><i>✦</i><span>UAV Detection</span><i>✦</i><span>RF Fingerprinting</span><i>✦</i><span>Signal Identification</span><i>✦</i><span>Deep Learning for RF</span><i>✦</i><span>Spectrum Awareness</span><i>✦</i>
+      <span aria-hidden="true">Automatic Modulation Classification</span><i aria-hidden="true">✦</i><span aria-hidden="true">UAV Detection</span><i aria-hidden="true">✦</i><span aria-hidden="true">RF Fingerprinting</span><i aria-hidden="true">✦</i><span aria-hidden="true">Signal Identification</span><i aria-hidden="true">✦</i><span aria-hidden="true">Deep Learning for RF</span><i aria-hidden="true">✦</i><span aria-hidden="true">Spectrum Awareness</span><i aria-hidden="true">✦</i>
+    </div></div>
+
+    <section class="section research-overview" id="research" aria-labelledby="research-title">
+      <div class="shell">
+        <header class="section-heading section-heading-light reveal"><div><p class="eyebrow"><span></span>Research atlas</p><h2 id="research-title">One spectrum,<br><em>many signal questions.</em></h2></div><div><p>Four directions that connect — from identifying the modulation on the wire to finding the drone behind it.</p><a class="section-action section-action-dark" href="/research/">Open the interactive atlas <span>↗</span></a></div></header>
+        <div class="research-grid">
+          <a class="research-card reveal" data-tilt href="/research/#signal-id"><span class="card-number">01</span><img class="research-visual" src="/assets/images/directions/signal-id.svg" alt="RF signal samples clustered by class" loading="lazy"><div class="research-copy"><span class="research-tag">Categorize the spectrum</span><h3>RF Signal Identification</h3><p>Identifying modulation type and signal class directly from raw I/Q samples.</p></div></a>
+          <a class="research-card reveal" data-tilt href="/research/#uav-detection"><span class="card-number">02</span><img class="research-visual" src="/assets/images/directions/uav-detection.svg" alt="A narrowband UAV control-link signature" loading="lazy"><div class="research-copy"><span class="research-tag">Find the emitter</span><h3>UAV Detection</h3><p>Detecting and recognizing drones from their RF emissions, with per-device fingerprinting.</p></div></a>
+          <a class="research-card reveal" data-tilt href="/research/#dl-rf"><span class="card-number">03</span><img class="research-visual" src="/assets/images/directions/dl-rf.svg" alt="A neural network over a time–frequency representation" loading="lazy"><div class="research-copy"><span class="research-tag">Learn from waveforms</span><h3>Deep Learning for RF</h3><p>CNN, ResNet and Transformer architectures that turn I/Q into reliable signal decisions.</p></div></a>
+          <a class="research-card reveal" data-tilt href="/research/#robust-recognition"><span class="card-number">04</span><img class="research-visual" src="/assets/images/directions/robust-recognition.svg" alt="A classifier holding steady under noise" loading="lazy"><div class="research-copy"><span class="research-tag">Hold up under noise</span><h3>Robust Recognition</h3><p>Keeping classifiers accurate under low SNR, fading and lab-to-field distribution shift.</p></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section publications-section" id="publications" aria-labelledby="publications-title">
+      <div class="shell">
+        <header class="section-heading reveal"><div><p class="eyebrow"><span></span>Selected work</p><h2 id="publications-title">Work in <em>progress.</em></h2></div><div><p>Two ongoing manuscripts on RF signal classification and UAV detection — more to follow as the work matures.</p><a class="section-action" href="/publications/">Search all publications <span>↗</span></a></div></header>
+        <div class="featured-publications">
+          <article class="feature-paper feature-paper-wide reveal" data-publication-id="amc-dl"><figure class="paper-visual"><img class="paper-ambient" src="/assets/images/publications/amc.svg" alt="" aria-hidden="true" loading="lazy"><img class="paper-artwork" src="/assets/images/publications/amc.svg" alt="IQ constellation diagram with modulation clusters and a learned decision boundary" loading="lazy"></figure><div class="paper-meta"><span>Manuscript in preparation</span><time>2025</time></div><h3><a href="/projects/rf-detection/">Deep learning for automatic modulation classification of RF signals.</a></h3><div class="paper-footer"><p class="paper-authors"><strong>Jinhao Wan</strong></p><div class="paper-links"><a href="/projects/rf-detection/">Project ↗</a><a href="/publications/">BibTeX ↗</a></div></div></article>
+          <article class="feature-paper feature-paper-wide reveal" data-publication-id="uav-rf"><figure class="paper-visual"><img class="paper-ambient" src="/assets/images/publications/uav-rf.svg" alt="" aria-hidden="true" loading="lazy"><img class="paper-artwork" src="/assets/images/publications/uav-rf.svg" alt="RF spectrogram showing a narrowband UAV control-link signature" loading="lazy"></figure><div class="paper-meta"><span>Manuscript in preparation</span><time>2025</time></div><h3><a href="/projects/rf-detection/">RF-based detection and recognition of unmanned aerial vehicles.</a></h3><div class="paper-footer"><p class="paper-authors"><strong>Jinhao Wan</strong></p><div class="paper-links"><a href="/projects/rf-detection/">Project ↗</a><a href="/publications/">BibTeX ↗</a></div></div></article>
+        </div>
+        <div class="publications-cta reveal"><p>The library lists each manuscript with status, keywords and one-click BibTeX copying.</p><a class="button button-primary" href="/publications/">Open searchable library ↗</a></div>
+      </div>
+    </section>
+
+    <section class="section projects-section" id="projects" aria-labelledby="projects-title"><div class="shell"><header class="section-heading section-heading-light reveal"><div><p class="eyebrow"><span></span>Research artifacts</p><h2 id="projects-title">Methods made<br><em>tangible.</em></h2></div><div><p>Open code and captures that turn the research into something reproducible.</p><a class="section-action section-action-dark" href="/projects/">View all projects <span>↗</span></a></div></header>
+      <article class="project-card reveal"><a class="project-media" href="/projects/rf-detection/"><img src="/assets/images/publications/uav-rf.svg" alt="RF signal classification project visualization" loading="lazy"><span>Explore project <i>↗</i></span></a><div class="project-content"><div class="project-label"><span>Featured method</span><time>2026</time></div><h3>RF<em>Sense</em></h3><p>Deep-learning pipelines for automatic modulation classification and RF-based detection and fingerprinting of UAVs.</p><dl class="project-stats"><div><dt>Modulations</dt><dd>8+</dd></div><div><dt>Architectures</dt><dd>CNN · ResNet · Transformer</dd></div><div><dt>Framework</dt><dd>PyTorch</dd></div></dl><div class="project-links"><a href="/projects/rf-detection/">Project page ↗</a><a href="/publications/">Paper ↗</a></div></div></article>
+      <article class="project-card reveal"><a class="project-media" href="/research/#signal-id"><img src="/assets/images/directions/signal-id.svg" alt="SDR capture set visualization" loading="lazy"><span>Explore dataset <i>↗</i></span></a><div class="project-content"><div class="project-label"><span>Open dataset</span><time>2026</time></div><h3>SDR<em>Capture</em></h3><p>An in-progress collection of software-defined radio captures across modulation types and UAV emitters for training and evaluation.</p><dl class="project-stats"><div><dt>Bands</dt><dd>2.4 GHz</dd></div><div><dt>Captures</dt><dd>Growing</dd></div><div><dt>Status</dt><dd>In progress</dd></div></dl><div class="project-links"><a href="/research/#signal-id">Dataset ↗</a><a href="/projects/rf-detection/">Related project ↗</a></div></div></article>
+    </div></section>
+
+    <section class="section news-section" id="news" aria-labelledby="news-title"><div class="shell split-section"><header class="sticky-heading reveal"><p class="eyebrow"><span></span>Latest signals</p><h2 id="news-title">Research<br><em>news.</em></h2><p>Honest milestones as the work develops.</p><a class="section-action" href="/research/#timeline">View timeline <span>↗</span></a></header><div class="timeline">
+      <article class="timeline-item reveal"><time datetime="2026-08">Aug 2026</time><span></span><p><strong>Portfolio relaunch</strong> — rebuilt this site as an interactive RF research portfolio.</p></article>
+      <article class="timeline-item reveal"><time datetime="2026">2026</time><span></span><p><strong>Research focus</strong> — centered on deep learning for RF signal categorization and UAV detection.</p></article>
+      <article class="timeline-item reveal"><time datetime="2026">2026</time><span></span><p><strong>In preparation</strong> — manuscripts on automatic modulation classification and RF fingerprinting underway.</p></article>
+    </div></div></section>
+
+    <section class="section service-section" id="service" aria-labelledby="service-title"><div class="shell"><header class="section-heading reveal"><div><p class="eyebrow"><span></span>Academic community</p><h2 id="service-title">Service &amp;<br><em>engagement.</em></h2></div><p>Early in the research journey — contributing where I can while the core work develops.</p></header><div class="service-grid">
+      <article class="service-card reveal"><p class="card-kicker">Open science</p><ul><li><strong>Code &amp; captures</strong><span>Released as the RF work matures</span></li><li><strong>Reproducibility</strong><span>Sharing models and SDR pipelines</span></li></ul></article>
+      <article class="service-card reveal"><p class="card-kicker">Peer review</p><ul><li><strong>Open to reviewing</strong><span>RF, signal-processing &amp; ML venues</span></li><li><strong>Reviews to date</strong><span>Building — happy to be invited</span></li></ul></article>
+      <article class="service-card reveal"><p class="card-kicker">Community</p><div class="conference-cloud"><span>Open source</span><span>Mentoring</span><span>Reproducible code</span><span>Workshops</span><span>SDR community</span></div><p class="service-note">Growing into these roles as the research matures.</p></article>
+    </div></div></section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="contact-glow" aria-hidden="true"></div><div class="marquee" aria-hidden="true"><div>DECODING THE RF SPECTRUM · DECODING THE RF SPECTRUM · DECODING THE RF SPECTRUM · </div></div><div class="shell contact-inner reveal"><p class="eyebrow">Have an idea?</p><h2 id="contact-title">Let's explore it<br><em>together.</em></h2><p>Always glad to talk RF signal identification, UAV detection, collaborations or ideas — reach out anytime.</p><a class="email-link" href="mailto:wanjinhao1@gmail.com">wanjinhao1@gmail.com <span>↗</span></a></div>
+<footer class="site-footer shell"><a class="template-origin" href="https://github.com/zhuqinfeng1999/interactive-academic-portfolio" target="_blank" rel="noreferrer" aria-label="View the Spatialfolio template on GitHub"><span class="template-origin-icon" aria-hidden="true"></span><span class="template-origin-copy"><span class="template-origin-kicker">Template provenance</span><strong>Built with Spatialfolio</strong><span class="template-origin-detail">Academic portfolio template by Qinfeng Zhu</span></span><span class="template-origin-arrow" aria-hidden="true">↗</span></a><div class="footer-links"><a href="https://github.com/wanjinhao1" target="_blank" rel="noreferrer">GitHub ↗</a><a href="mailto:wanjinhao1@gmail.com">Email ↗</a></div><div class="footer-meta"><span>© <span data-year>2026</span> Jinhao Wan</span><a href="#home">Back to top ↑</a></div></footer>
+    </section>
+  </main>
+
+  <script src="/assets/js/cosmic.js?v=1" defer></script>
+  <script src="/assets/js/spatial-world.js?v=1" defer></script>
+</body>
 </html>

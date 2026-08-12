@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="g" cx="78%" cy="30%" r="70%"><stop stop-color="#10454c"/><stop offset="1" stop-color="#071018"/></radialGradient>
+    <pattern id="p" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" fill="none" stroke="#85f6ff" stroke-opacity=".07"/></pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#071018"/><rect width="1200" height="630" fill="url(#g)" opacity=".75"/><rect width="1200" height="630" fill="url(#p)"/>
+  <g transform="translate(720,90)">
+    <rect x="0" y="0" width="400" height="440" rx="10" fill="#0a141c" stroke="#79f3ee" stroke-opacity=".25"/>
+    <g stroke="#79f3ee" opacity=".22"><line x1="200" y1="20" x2="200" y2="420"/><line x1="20" y1="220" x2="380" y2="220"/></g>
+    <g fill="#79f3ee"><circle cx="120" cy="140" r="5"/><circle cx="280" cy="140" r="5"/><circle cx="120" cy="300" r="5"/><circle cx="280" cy="300" r="5"/></g>
+    <g fill="#ff9d66"><circle cx="108" cy="152" r="2.4"/><circle cx="292" cy="132" r="2.4"/><circle cx="132" cy="312" r="2.4"/><circle cx="268" cy="288" r="2.4"/><circle cx="200" cy="220" r="2.4"/></g>
+    <g fill="#9a8cff"><circle cx="150" cy="180" r="3"/><circle cx="250" cy="180" r="3"/><circle cx="150" cy="260" r="3"/><circle cx="250" cy="260" r="3"/><circle cx="200" cy="150" r="3"/><circle cx="200" cy="290" r="3"/></g>
+    <circle cx="200" cy="220" r="120" fill="none" stroke="#79f3ee" stroke-opacity=".2"/>
+  </g>
+  <text x="78" y="112" fill="#79f3ee" font-family="monospace" font-size="18" letter-spacing="5">RESEARCH PORTFOLIO · RF SIGNAL INTELLIGENCE</text>
+  <text x="74" y="300" fill="#f4f6f3" font-family="Georgia,serif" font-size="96">Jinhao Wan</text>
+  <text x="80" y="362" fill="#a9b9bb" font-family="Arial,sans-serif" font-size="28">PhD Researcher · Deep Learning for RF Signals</text>
+  <text x="80" y="520" fill="#79f3ee" font-family="monospace" font-size="16" letter-spacing="3">SIGNAL IDENTIFICATION · UAV DETECTION · MODULATION CLASSIFICATION</text>
+</svg>
