@@ -32,7 +32,11 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+/* Global readability zoom — scales every px-based size on every page.
+   Dial up (1.15) or down (1.05) in one place. */
+html { scroll-behavior: smooth; scroll-padding-top: 96px; zoom: 1.1; }
+@media (min-width: 1500px) { html { zoom: 1.12; } }       /* a touch more when there's room */
+@media (max-width: 720px)  { html { zoom: 1.06; } }       /* gentler on phones to avoid overflow */
 body {
   min-width: 320px;
   margin: 0;
